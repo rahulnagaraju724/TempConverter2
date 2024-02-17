@@ -14,16 +14,17 @@
     app:layout_constraintTop_toTopOf="parent"
     tools:context="com.example.tempconverter2.MainActivity">
 
+
     <TextView android:id="@+id/textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <!-- add View as gap for 4 blank lines -->
+
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/view">
-    </View>
+        android:layout_height="60dp"></View>
 
     <SeekBar android:id="@+id/seekbar"
         android:layout_width="wrap_content"
@@ -43,6 +44,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="49dp" />
+
+
 
     <ViewStub
         android:id="@+id/viewStub1"

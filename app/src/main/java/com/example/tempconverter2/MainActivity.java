@@ -114,9 +114,9 @@ public class MainActivity extends AppCompatActivity {
 //
         String[] wkTemps = new String[5];
         for (int i = 0; i < 5; i++) {
-            wkTemps[i] = wkDays[i] + " - High: " + wkTempsHigh[i] + "°C, Low: " + wkTempsLow[i] + "°C";
+            wkTemps[i] = "High: " + wkTempsHigh[i] + "°C, Low: " + wkTempsLow[i] + "°C";
         }
-        int weatherImages []={R.drawable.sun,R.drawable.clouds, R.drawable.sun_clouds,R.drawable.wind,R.drawable.below};
+        int weatherImages []={R.drawable.below,R.drawable.clouds, R.drawable.sun_clouds,R.drawable.sun,R.drawable.wind};
 
 //        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, wkTemps);
 //        lv.setAdapter(adapter);
