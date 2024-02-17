@@ -93,11 +93,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //Listview logic
-        String[] wkTemps = new String[]{"1", "-10", "0", "30", "10"};
+        //String[] wkTemps = new String[]{"1", "-10", "0", "30", "10"};
 
         String[] wkTempsLow = new String[]{"-2", "1", "4", "4", "1"};
         String[] wkTempsHigh = new String[]{"4", "6", "8", "11", "6"};
-        String[] wlDays=new String[]{"Sunday","Monday","Tuesday","Wednesday","Thursday"};
+        String[] wkDays=new String[]{"Sunday","Monday","Tuesday","Wednesday","Thursday"};
 
         lv = findViewById(R.id.listView);
         @SuppressWarnings({"unchecked", "rawtypes"})
@@ -106,12 +106,23 @@ public class MainActivity extends AppCompatActivity {
          * attach the adapter to the ListView. First, initialize the adapter...:
          *
          */
-                ArrayAdapter adapter = new ArrayAdapter(this,
-                android.R.layout.simple_list_item_1,
-                android.R.id.text1, wkTemps);
-        // Assign adapter to ListView
-        lv.setAdapter(adapter);
+//                ArrayAdapter adapter = new ArrayAdapter(this,
+//                android.R.layout.simple_list_item_1,
+//                android.R.id.text1, wkTemps);
+//        // Assign adapter to ListView
+//        lv.setAdapter(adapter);
+//
+        String[] wkTemps = new String[5];
+        for (int i = 0; i < 5; i++) {
+            wkTemps[i] = wkDays[i] + " - High: " + wkTempsHigh[i] + "°C, Low: " + wkTempsLow[i] + "°C";
+        }
+        int weatherImages []={R.drawable.sun,R.drawable.clouds, R.drawable.sun_clouds,R.drawable.wind,R.drawable.below};
 
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, wkTemps);
+//        lv.setAdapter(adapter);
+
+        CustomBaseAdapter customBaseAdapter=new CustomBaseAdapter(getApplicationContext(),wkDays,wkTemps,weatherImages);
+        lv.setAdapter(customBaseAdapter);
     }//end onCreate method
 
 }
