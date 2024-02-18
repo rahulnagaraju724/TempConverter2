@@ -3,7 +3,16 @@
     <style name="Base.Theme.TempConverter2" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:textColor">@android:color/white</item>
     </style>
+
+    <style name="SeekBarStyle" parent="Widget.AppCompat.SeekBar">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:progressTint">@android:color/white</item>
+        <item name="android:thumbTint">@android:color/white</item>
+        <!-- Add other custom attributes as needed -->
+    </style>
+
 
     <style name="Theme.TempConverter2" parent="Base.Theme.TempConverter2" />
 </resources>

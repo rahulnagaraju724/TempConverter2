@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         //seekbar logic
         textView = findViewById(R.id.textview);
-        textView.setText("     Celsius at 0 degrees");
+        textView.setText("Celsius at 0 degrees");
         //set default view
         seekBar = findViewById(R.id.seekbar);
         seekBar.setProgress(start_position);
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 temp = progress - start;
                 discrete = (int) Math.round((((temp * 9.0) /
                         5.0) + 32)); //convert C to F temp
-                textView.setText("     Celsius at " + temp + " degrees");
+                textView.setText("Celsius at " + temp + " degrees");
             }
         });
         //Listview logic
