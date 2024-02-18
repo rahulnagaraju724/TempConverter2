@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ListView;
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     ListView lv; //declare Listview object
 
     View heading;
+
+    Button backButton;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -58,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     textView.setVisibility(View.GONE);
                     //heading.setVisibility(View.VISIBLE);
                     stub.setVisibility(View.VISIBLE);
+                    lv.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -96,6 +101,30 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText("Celsius at " + temp + " degrees");
             }
         });
+
+        // Initialize backButton
+        backButton = findViewById(R.id.backButton);
+
+        // Set OnClickListener for backButton
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Show the hidden views
+                textView.setVisibility(View.VISIBLE);
+                seekBar.setVisibility(View.VISIBLE);
+                checkBox.setVisibility(View.VISIBLE);
+                stub.setVisibility(View.INVISIBLE);
+
+                // Uncheck the checkbox
+                checkBox.setChecked(false);
+
+                // Hide the backButton and listView
+                backButton.setVisibility(View.GONE);
+                lv.setVisibility(View.GONE);
+            }
+        });
+
+
         //Listview logic
         //String[] wkTemps = new String[]{"1", "-10", "0", "30", "10"};
 
