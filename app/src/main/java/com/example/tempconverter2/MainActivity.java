@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     CheckBox checkBox;
     ListView lv; //declare Listview object
 
+    View heading;
+
     @SuppressLint("MissingInflatedId")
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         //ViewStub logic
         checkBox = findViewById(R.id.checkBox1);
 
+        heading=findViewById(R.id.projectName);
         //handle checkbox click event
         checkBox.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     checkBox.setVisibility(View.GONE);
                     seekBar.setVisibility(View.GONE);
                     textView.setVisibility(View.GONE);
+                    //heading.setVisibility(View.VISIBLE);
                     stub.setVisibility(View.VISIBLE);
                 }
             }
