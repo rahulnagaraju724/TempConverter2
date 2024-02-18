@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button backButton;
 
+    TextView convertText;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -52,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         checkBox = findViewById(R.id.checkBox1);
 
         heading=findViewById(R.id.projectName);
+
+        convertText=findViewById(R.id.convertText);
+
         //handle checkbox click event
         checkBox.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
@@ -63,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
                     //heading.setVisibility(View.VISIBLE);
                     stub.setVisibility(View.VISIBLE);
                     lv.setVisibility(View.VISIBLE);
+                    backButton.setVisibility(View.VISIBLE);
+                    convertText.setVisibility(View.GONE);
+
                 }
             }
         });
@@ -79,12 +87,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 if (temp == 0)  //for initial view result
-                    Toast.makeText(getBaseContext(), "Fahrenheit result: " +
-                            "32 degrees", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getBaseContext(), "Fahrenheit result: " +
+//                            "32 degrees", Toast.LENGTH_SHORT).show();
+                    convertText.setText("Fahrenheit result: " +
+                            "32 degrees");
                 else
-                    Toast.makeText(getBaseContext(), "Fahrenheit result: "
+//                    Toast.makeText(getBaseContext(), "Fahrenheit result: "
+//                            + String.valueOf(discrete) +
+//                            " degrees", Toast.LENGTH_SHORT).show();
+                convertText.setText("Fahrenheit result: "
                             + String.valueOf(discrete) +
-                            " degrees", Toast.LENGTH_SHORT).show();
+                            " degrees");
             }
 
             @Override
@@ -121,6 +134,9 @@ public class MainActivity extends AppCompatActivity {
                 // Hide the backButton and listView
                 backButton.setVisibility(View.GONE);
                 lv.setVisibility(View.GONE);
+
+                convertText.setVisibility(View.VISIBLE);
+
             }
         });
 
