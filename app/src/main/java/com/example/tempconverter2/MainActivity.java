@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
     TextView convertText;
 
+    View weekForecast;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -57,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
 
         convertText=findViewById(R.id.convertText);
 
+        weekForecast=findViewById(R.id.simply);
+
+        weekForecast.setVisibility(View.GONE);
+
         //handle checkbox click event
         checkBox.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
@@ -70,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
                     lv.setVisibility(View.VISIBLE);
                     backButton.setVisibility(View.VISIBLE);
                     convertText.setVisibility(View.GONE);
+                    heading.setVisibility(View.VISIBLE);
+                    weekForecast.setVisibility(View.VISIBLE);
 
                 }
             }
@@ -136,6 +144,9 @@ public class MainActivity extends AppCompatActivity {
                 lv.setVisibility(View.GONE);
 
                 convertText.setVisibility(View.VISIBLE);
+
+                weekForecast.setVisibility(View.GONE);
+
 
             }
         });
