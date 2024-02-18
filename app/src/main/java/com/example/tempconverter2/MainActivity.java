@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
 
         String[] wkTempsLow = new String[]{"-2", "1", "4", "4", "1"};
         String[] wkTempsHigh = new String[]{"4", "6", "8", "11", "6"};
-        String[] wkDays=new String[]{"Sunday","Monday","Tuesday","Wednesday","Thursday"};
+        String[] wkDays=new String[]{"Monday","Tuesday","Wednesday","Thursday","Friday"};
 
         lv = findViewById(R.id.listView);
         @SuppressWarnings({"unchecked", "rawtypes"})
